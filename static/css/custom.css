@@ -1,0 +1,64 @@
+/* Reset basic margins */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Container for content */
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Style for the navigation bar */
+.navbar {
+    background-color: #3264ff; /* A nice blue color */
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #1a42a0;
+}
+
+/* Headings and lists */
+h1 {
+    color: #3264ff;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #3264ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

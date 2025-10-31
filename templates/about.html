@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Main Content Card (Centered and Styled with Tailwind) -->
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
+        
+        <h1 class="text-3xl font-bold text-red-600 border-b border-indigo-200 pb-3 mb-6">
+            About This Project
+        </h1>
+        
+        <p class="text-gray-600 mb-4">
+            This project demonstrates the proper use of **Flask routing**, **Jinja templates**, and the integration of **Tailwind CSS** and **HTMX** for modern web development. Every page correctly links back to the base template.
+        </p>
+
+        <h2 class="text-3xl font-semibold text-indigo-700 mt-8 mb-4 border-b border-gray-100 pb-2">
+            Our Story
+        </h2>
+        
+        <p class="text-gray-600 mb-6">
+            Here's a little visual to go along with our amazing story of learning Flask, databases, and modern styling.
+        </p>
+        
+        <!-- Image Styling: Centered, Rounded, and Responsive -->
+        <img 
+            src="{{ url_for('static', filename='img/nahian.png') }}" 
+            alt="Project Visual Representation" 
+            class="mx-auto block max-w-full h-auto rounded-xl shadow-lg transition duration-300 hover:shadow-2xl" 
+            style="max-height: 400px;"
+        >
+        
+        <p class="mt-8 text-lg font-medium text-gray-700">
+            We believe in building simple, effective web applications using the best tools Python and web standards have to offer.
+        </p>
+        
+    </div>
+{% endblock %}

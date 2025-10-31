@@ -1,0 +1,43 @@
+# .gitignore
+
+# -----------------
+# 1. Python/Virtual Environments
+# -----------------
+# Virtual environment folder created by 'python -m venv venv' or similar
+venv/
+.venv/
+env/
+
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+
+# Distribution and Packaging
+dist/
+build/
+*.egg-info/
+
+# SQLite Database (Your Flask-SQLAlchemy file)
+site.db
+*.db
+
+# -----------------
+# 2. Node/Frontend Assets
+# -----------------
+# Node modules installed by npm
+node_modules/
+
+# Tailwind CSS cache and log files
+.tailwindcss/
+npm-debug.log*
+yarn-debug.log*
+
+# -----------------
+# 3. Flask/Web Specific
+# -----------------
+# Flask session files
+.flask_session/
+
+# Editor/OS Temporary Files
+.DS_Store
+.vscode/

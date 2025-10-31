@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Learning App</title>
+    
+    <!-- Link to the compiled Tailwind CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    
+    <!-- Load HTMX Library for dynamic interactions -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+<body class="bg-gray-100 font-sans antialiased min-h-screen">
+    
+    <!-- Navigation Bar (Styled with Tailwind) -->
+    <header class="bg-gray-800 shadow-xl">
+        <div class="max-w-7xl mx-auto flex justify-center py-4">
+            
+            <!-- Links -->
+            <a href="{{ url_for('home') }}" class="text-white px-6 py-2 mx-2 rounded-lg hover:bg-gray-700 transition duration-150 font-medium">
+                Home
+            </a>
+            <a href="{{ url_for('about') }}" class="text-white px-6 py-2 mx-2 rounded-lg hover:bg-gray-700 transition duration-150 font-medium">
+                About
+            </a>
+            <a href="{{ url_for('profile', username='Jane') }}" class="text-white px-6 py-2 mx-2 rounded-lg hover:bg-gray-700 transition duration-150 font-medium">
+                My Profile
+            </a>
+            <a href="{{ url_for('contact') }}" class="text-white px-6 py-2 mx-2 rounded-lg hover:bg-gray-700 transition duration-150 font-medium">
+                Contact Form
+            </a>
+            
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- The block where child templates insert their unique content -->
+        {% block content %}{% endblock %} 
+    </main>
+    
+</body>
+</html>

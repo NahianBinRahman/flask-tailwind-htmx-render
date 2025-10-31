@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Tailwind Card Component: Centered and Styled -->
+<div class="max-w-xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
+
+    <!-- Header with Tailwind styling -->
+    <h1 class="text-3xl font-extrabold text-indigo-700 mb-4 border-b pb-2">
+        Project Goal: Dynamic Greeting
+    </h1>
+    
+    <!-- Greeting Text -->
+    <p class="text-xl text-gray-700 mt-6">
+        Hello, <strong class="text-indigo-600">{{ name }}</strong>! 
+        Welcome to your first dynamic Flask application.
+    </p>
+    
+    <!-- Footer/Info Text -->
+    <p class="mt-4 text-sm text-gray-500 italic">
+        This page was generated successfully using a Jinja2 template and styled with Tailwind CSS.
+    </p>
+
+    <!-- Simple HTMX Test (from our previous plan) -->
+    <div class="mt-6 pt-4 border-t border-gray-200">
+        <button 
+            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-150"
+            hx-get="{{ url_for('home') }}" 
+            hx-target="#quote-target" 
+            hx-swap="innerHTML"
+        >
+            Get a Dynamic Quote
+        </button>
+        <div id="quote-target" class="mt-4 p-3 bg-gray-100 rounded text-gray-800">
+            <!-- Quote will appear here -->
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

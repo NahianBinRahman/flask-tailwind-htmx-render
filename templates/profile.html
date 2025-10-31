@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Main Content Card (Centered and Styled with Tailwind) -->
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-2xl border border-indigo-100">
+
+        <!-- Profile Header -->
+        <h1 class="text-4xl font-extrabold text-indigo-700 border-b border-gray-200 pb-4 mb-6 text-center">
+            👤 Profile for: <span class="text-gray-800">{{ user }}</span>
+        </h1>
+        
+        <p class="text-lg text-gray-700 mb-6 text-center">
+            This is a personalized page generated using **Variable Routing**.
+        </p>
+
+        <!-- Dynamic URL Test Section -->
+        <div class="bg-indigo-50 p-6 rounded-lg shadow-inner mb-8">
+            <h2 class="text-xl font-semibold text-indigo-800 mb-3">Test the Dynamic URL</h2>
+            <p class="text-gray-600 mb-4">The name **{{ user }}** was captured directly from the URL segment after `/profile/`.</p>
+            
+            <p class="font-medium mb-2">Click these links to see the URL and page content change:</p>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="{{ url_for('profile', username='Maria_S') }}" class="text-white bg-indigo-600 hover:bg-indigo-700 font-bold py-2 px-4 rounded-lg transition duration-150 shadow">
+                        Maria_S
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('profile', username='Dev_Team') }}" class="text-white bg-indigo-600 hover:bg-indigo-700 font-bold py-2 px-4 rounded-lg transition duration-150 shadow">
+                        Dev_Team
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Query String Test Section -->
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-inner">
+            <h2 class="text-xl font-semibold text-yellow-800 mb-3">Test the Query String (`request.args`)</h2>
+            <p class="text-gray-600 mb-4">Click below to test the `search()` function using data passed via `?query=` in the URL:</p>
+            
+            <a href="{{ url_for('search') }}?query=what+is+request+args" class="inline-block text-white bg-yellow-600 hover:bg-yellow-700 font-bold py-2 px-4 rounded-lg transition duration-150 shadow">
+                Search Example
+            </a>
+        </div>
+        
+    </div>
+{% endblock %}

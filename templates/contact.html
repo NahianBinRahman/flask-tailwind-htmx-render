@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Tailwind Form Container -->
+    <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-2xl border border-indigo-100">
+
+        <h1 class="text-3xl font-bold text-gray-800 border-b border-indigo-200 pb-3 mb-6 text-center">
+            Contact Us (Secure Form)
+        </h1>
+        
+        <p class="text-gray-600 mb-6 text-center">
+            This form is secured with CSRF protection and validated using a Python class (Flask-WTF).
+        </p>
+
+        <form method="POST" class="space-y-6">
+            
+            <!-- CSRF Token (CRITICAL for Security) -->
+            {{ form.csrf_token }} 
+
+            <!-- Name Field -->
+            <div class="space-y-2">
+                {{ form.name.label(class="block text-sm font-medium text-gray-700") }}
+                {{ form.name(class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500", placeholder="Your Full Name") }}
+                {% if form.name.errors %}
+                    {% for error in form.name.errors %}
+                        <p class="text-red-500 text-sm italic mt-1">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+            <!-- Email Field -->
+            <div class="space-y-2">
+                {{ form.email.label(class="block text-sm font-medium text-gray-700") }}
+                {{ form.email(class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500", placeholder="example@email.com") }}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <p class="text-red-500 text-sm italic mt-1">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+            <!-- Message Field -->
+            <div class="space-y-2">
+                {{ form.message.label(class="block text-sm font-medium text-gray-700") }}
+                {{ form.message(class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 h-32", placeholder="Your detailed message...") }}
+                {% if form.message.errors %}
+                    {% for error in form.message.errors %}
+                        <p class="text-red-500 text-sm italic mt-1">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+            <!-- Submit Button -->
+            <div>
+                {{ form.submit(class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 cursor-pointer") }}
+            </div>
+            
+        </form>
+    </div>
+{% endblock %}

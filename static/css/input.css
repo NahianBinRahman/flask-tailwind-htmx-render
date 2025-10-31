@@ -1,0 +1,14 @@
+/* stylelint-disable at-rule-no-unknown */
+
+/* 1. Tailwind Directives: These are necessary for the Tailwind engine to inject its base, 
+   component, and utility styles based on the classes found in your HTML templates. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Custom Styles Import: This line imports your previous CSS (your old style.css, renamed to custom.css)
+   so that it is also processed and included in the final output.css file. */
+@import "./custom.css";
+@import "tailwindcss"; 
+
+/* stylelint-enable at-rule-no-unknown */
